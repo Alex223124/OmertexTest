@@ -8,14 +8,14 @@
 </head>
 <body>
   
-  <% render 'layout/header' %>
+  <% render 'layouts/header' %>
 
   <div class="container">
-  	  <% flash.each do |message_type, message|
-  	  	<div if="flash" class="flash-<%= message_type %>"><%= message %></div>
+  	  <% flash.each do |message_type, message| %>
+  	  	<div id="flash" class="flash-<%= message_type %>"><%= message %></div>
   	  <% end %>
 
-  	   
+
       <%= yield %>  
   </div>
 

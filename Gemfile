@@ -15,6 +15,8 @@ gem 'mongoid', '~> 4.0.0'
 gem 'mongoid-enum', '~> 0.2.0'
 # Mongoid 4.0.0
 gem 'mongoid_auto_increment_id', "0.6.5"
+# A Mongo ORM for Ruby
+gem 'mongo_mapper'
 
 # Аунтефикация
 gem 'devise', '~> 3.5.1'
@@ -27,10 +29,15 @@ gem 'state_machine', '~> 1.2.0'
 
 # Админка представления
 gem 'activeadmin', github: 'activeadmin'
-gem 'sass-rails', '~> 5.0'
+
 
 # Авторизация, что могут делать различные пользователи прошедшие аунтефикацию
 gem 'pundit', '~> 1.0.1'
+
+#Design gems
+gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'sass-rails', '~> 5.0'
+
 
 group :development, :test do
   
