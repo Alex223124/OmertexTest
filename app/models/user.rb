@@ -8,11 +8,12 @@ class User
          
   enum :role, [:user, :admin], default: :user 
 
+  # User.roles 
   def self.roles
     self::ROLE
   end
 
-
+  
   # Hooks
   before_save { self.email = email.downcase }                                              
   

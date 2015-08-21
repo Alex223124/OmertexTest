@@ -1,0 +1,14 @@
+<td>
+  <%= link_to loan.loan_name, loan %>
+</td>
+<td>
+  <%= form_for(loan) do |f| %>
+    <%= f.select(:status, Loan.statuses.map {|status| [status]}) %>
+    <td>
+    <button><%= f.submit 'Change status' %></button>
+    </td>
+  <% end %>
+</td>
+<td>
+  <%= link_to("Delete loan", loan_path(loan), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless user == current_user %>
+</td>
