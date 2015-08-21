@@ -12,11 +12,37 @@ class User
     self::ROLE
   end
 
+
+  # Hooks
+  before_save { self.email = email.downcase }                                              
+  
+
+  # Associations
+  #embeds_many :phones
+  #embeds_many :phones
+  #embeds_many :phones
+  
+
+  # Validations
+  #validates :user_name, uniqueness: true, length: { minimum: 3, maximum: 40 }
+  #validates :first_name, length: { minimum: 2, maximum: 20 }
+  #validates :last_name, length: { minimum: 2, maximum: 20 }
+  VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 105 },
+                                format: { with: VALID_EMAIL_REGEX },
+                                uniqueness: { case_sensitive: false }
+  # validates :client_income, presence: true, numericality: { only_integer: true,
+                                                            # grater_than: 100,
+                                                            # less_than_or_equal_to: 500000 }  
+  validates :password, length: {minimum: 6}       
+  
+
+  # Data
   field :user_name,   type: String, default: "" 
   field :first_name,  type: String, default: ""
   field :last_name,   type: String, default: ""
 
-  filed :client_income, type: Integer
+  field :client_income, type: Integer
 
   ## Database authenticatable
   field :email,              type: String, default: ""
