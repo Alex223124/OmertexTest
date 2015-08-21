@@ -15,8 +15,7 @@ gem 'mongoid', '~> 4.0.0'
 gem 'mongoid-enum', '~> 0.2.0'
 # Mongoid 4.0.0
 gem 'mongoid_auto_increment_id', "0.6.5"
-# A Mongo ORM for Ruby
-gem 'mongo_mapper'
+
 
 # Аунтефикация
 gem 'devise', '~> 3.5.1'

@@ -6,15 +6,17 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  enum :role, [:user, :admin]
-  
-  after_initialize :set_default_role, :if => :new_record?
+  enum :role, [:user, :admin], default: :user 
 
-  def set_default_role
-    self.role ||= :user
+  def self.roles
+    self::ROLE
   end
 
+  field :user_name,   type: String, default: "" 
+  field :first_name,  type: String, default: ""
+  field :last_name,   type: String, default: ""
 
+  filed :client_income, type: Integer
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -44,4 +46,6 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+
+
 end
