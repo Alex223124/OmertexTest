@@ -7,11 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <% render 'layout/header' %>
 
   <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-   
+  	  <% flash.each do |message_type, message|
+  	  	<div if="flash" class="flash-<%= message_type %>"><%= message %></div>
+  	  <% end %>
+
+  	   
       <%= yield %>  
   </div>
 
