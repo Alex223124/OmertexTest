@@ -40,12 +40,16 @@ class Loan
 
   # Data
   field :loan_name,   type: String #Генерируется случайно
-  field :loan_amount, type: Integer #По дефолту исходя из юзера
+  field :loan_amount, type: Integer #Выбираемое юзером количетсво денег которое он берёт в кредит
 
   field :initial_day, type: Time #Нужно выбрать юзеру
   field :last_day ,   type: Time #Нужно выбрать юзеру
 
   filed :description, type: String #Почему выбрали наш банк?
+
+
+  #Проценз устанавливается на день 5% в день или 10% в день
+  #соотвтетсвенно в формуле нам нужен метод которые постчитает разницу во времени.
 
 
 

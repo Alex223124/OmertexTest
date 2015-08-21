@@ -19,35 +19,32 @@ class User
   
 
   # Associations
-  #embeds_many :phones
-  #embeds_many :phones
-  #embeds_many :phones
-
+  embeds_many :loans 
+  embeds_many :payments
+  
   # Active Record assc analog
   #has_many :loans
-  #has_many :percenrage_of_loans
   #has_many :payments
 
   
 
   # Validations
-  #validates :user_name, uniqueness: true, length: { minimum: 3, maximum: 40 }
-  #validates :first_name, length: { minimum: 2, maximum: 20 }
-  #validates :last_name, length: { minimum: 2, maximum: 20 }
+  validates :user_name, uniqueness: true, length: { minimum: 3, maximum: 40 }
+  validates :first_name, length: { minimum: 2, maximum: 20 }
+  validates :last_name, length: { minimum: 2, maximum: 20 }
   VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 105 },
                                 format: { with: VALID_EMAIL_REGEX },
                                 uniqueness: { case_sensitive: false }
-  # validates :client_income, presence: true, numericality: { only_integer: true,
-                                                            # grater_than: 100,
-                                                            # less_than_or_equal_to: 500000 }  
+  validates :client_income, presence: true, numericality: { only_integer: true,
+                                                            grater_than: 100,
+                                                            less_than_or_equal_to: 500000 }  
   validates :password, length: {minimum: 6}       
   
 
   #Валидация ассоциаций
-  # validates_associated :loans
-  # validates_associated :percentage_of_loans
-  # validates_associated :payments 
+  validates_associated :loans, :payments
+ 
 
 
   # Data
