@@ -22,6 +22,12 @@ class User
   #embeds_many :phones
   #embeds_many :phones
   #embeds_many :phones
+
+  # Active Record assc analog
+  #has_many :loans
+  #has_many :percenrage_of_loans
+  #has_many :payments
+
   
 
   # Validations
@@ -37,6 +43,12 @@ class User
                                                             # less_than_or_equal_to: 500000 }  
   validates :password, length: {minimum: 6}       
   
+
+  #Валидация ассоциаций
+  # validates_associated :loans
+  # validates_associated :percentage_of_loans
+  # validates_associated :payments 
+
 
   # Data
   field :user_name,   type: String, default: "" 
