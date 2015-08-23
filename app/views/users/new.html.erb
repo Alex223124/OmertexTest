@@ -1,0 +1,56 @@
+<%= link_to("<<Back to List", {:action => 'index'}, :class => 'balck-link') %>
+
+
+<h1 class="user_name">New User</h1>
+<h2> Each new clietn is ... ... quote </h2>
+
+<%= form_for(:user, :url => { :action => 'create'}) do |f| %>
+
+  <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :client_income %><br />
+    <%= number_field :client_income, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create New User" %>
+  </div>
+
+  <div class="links">
+    <%= link_to 'Back', users_path %>
+  </div>
+
+<% end %>
+

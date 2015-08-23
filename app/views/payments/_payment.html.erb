@@ -1,0 +1,18 @@
+  <%= form_for(payment) do |f| %>
+
+  <div class="field">
+    </h1>
+    <%= link_to payment.payment_name, payment %><br>
+    <%= payment.payment_name %><br>
+    <%= payment.payment_amount %>
+    </h1>
+  </div>
+
+
+    <td>
+        <%= link_to("Edit", {:action => 'edit', :id => payment.id}, :class => 'action edit') %>|
+    </td>
+    <td>
+        <%= link_to("Show", {:action => 'show', :id => payment.id}, :class => 'action show') %>|
+    </td>
+<% end %>

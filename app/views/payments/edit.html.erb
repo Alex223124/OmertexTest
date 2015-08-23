@@ -1,0 +1,28 @@
+<%= link_to("<<Back to List", {:action => 'index'}, :class => 'balck-link') %>
+
+
+<h1 class="payment_name">Edit Payment Details</h1>
+
+
+<%= form_for @payment do |f| %>
+	<table summary="Payment form fields">
+		<tr>
+			<th>Payments Purpose name</th>
+			<th><%= f.text_field(:payment_name) %></td>
+		</tr>
+
+		<tr>
+			<th>Payment amount</th>
+			<th><%= f.number_field(:payment_amount) %></td>
+		</tr>
+			
+	</table>  
+	<div class="form-buttons">
+      <%= submit_tag("Edit Payment Details") %>
+  	</div>
+
+	<div class="links">
+	  <%= link_to 'Back', payment_path %>
+	</div>
+
+<% end %>

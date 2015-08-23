@@ -25,6 +25,10 @@
 			<th>Additions</th>
 			<th><%= f.text_field(:description) %></td>
 		<tr>
+
+			<%= f.select(:status, Loan.statuses.map {|status| [status.to_s.titleize, status]}) %>
+
+			
 	</table>  
 	<div class="form-buttons">
       <%= submit_tag("Update Loan") %>

@@ -13,5 +13,6 @@ class Payment
   # Data
   field :payment_name,      type: String    #название генерируется автоматически
   field :payment_amount,    type: Integer   #выбирется юзером
+  field :description,       type: String 
   
 end

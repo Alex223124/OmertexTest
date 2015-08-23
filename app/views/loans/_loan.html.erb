@@ -3,7 +3,8 @@
   <%= form_for(loan) do |f| %>
   <div class="field">
   	<%= link_to loan.loan_name, loan %><br>
-    <%= f.select(:status, Loan.statuses.map {|status| [status.to_s.titleize, status]}) %>
+    <%= loan.loan_name %><br>
+    <%= loan.status %>
   </div>
 
   <td>

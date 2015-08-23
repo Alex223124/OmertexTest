@@ -1,12 +1,13 @@
-<% if @loans.any? %>
+<% if @payments.any? %>
+
 <div class="bigbox">
   <div class="box">
     <table class="table-minimal">
-      <h1> List of User's Loans </h1>
+      <h1> List of Payments </h1>
       <tbody>
-        <% @loans.each do |loan| %>
+        <% @payments.each do |payment| %>
           <tr>
-            <%= render loan %>
+            <%= render payment %>
           </tr>
         <% end %>
       </tbody>
@@ -16,8 +17,8 @@
 
 <% else %>
 
-<p>No loans have been taken.</p>
+<p>No payments have been made.</p>
 
-Link to new loan here
+Link to new payment here
 
 <% end %> 
