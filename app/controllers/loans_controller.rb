@@ -17,7 +17,7 @@ class LoansController < ApplicationController
 
   def create
     @user = User.find(current_user.id)
-    @loan = @user.loans.new(loan_params)
+    @loan = @user.loans.new(secure_params)
     if @loan.save
       flash[:success] = "Your Loan has been created succesfully"
       redirect_to @loan
@@ -53,12 +53,8 @@ class LoansController < ApplicationController
 
   private
 
-  def loan_params
-    params.require(:loan).permit(:loan_name, :loan_amount, :period)
-  end
-
   def secure_params
-    params.require(:loan).permit(:status)
+    params.require(:loan).permit(:loan_name, :loan_amount, :period, :status)
   end
 
 end

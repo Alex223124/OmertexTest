@@ -1,24 +1,19 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  after_action :verify_authorized
+  #before_filter :authenticate_user!
+  #after_action :verify_authorized
 
   
   def index
     @users = User.all
-    authorize User
+    #authorize User
   end
 
   def new
     @user = User.new
   end
 
-  def show
-    @loan = User.find(params[:id])
-  end
-
-
   def create
-    @user = User.new(user_params)
+    @user = User.new(secure_params)
     if @user.save
       flash[:success] = "Your account has been created succesfully"
       session[:user_id] = @user.id
@@ -30,12 +25,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    authorize @user
+    #authorize @user
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    authorize @user
+    #authorize @user
     if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
     else
@@ -43,21 +42,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def delete
+    @loan = Loan.find(params[:id])
+  end
+
   def destroy
     user = User.find(params[:id])
-    authorize user
+    #authorize user
     user.destroy
     redirect_to users_path, :notice => "User deleted."
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(:email, :password, :client_income)
+  def secure_params
+    params.require(:user).permit(:email, :password, :client_income, :role)
   end
 
-  def secure_params
-    params.require(:user).permit(:role)
-  end
 
 end

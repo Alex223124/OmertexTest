@@ -1,3 +1,4 @@
+<% if @loans.any? %>
 <div class="bigbox">
   <div class="box">
     <table class="table-minimal">
@@ -12,3 +13,9 @@
     </table>
   </div>
 </div>
+
+<% else %>
+
+<p>No payments have been made.</p>
+
+<% end %> 
