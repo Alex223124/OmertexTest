@@ -1,14 +1,21 @@
-<td>
-  <%= link_to loan.loan_name, loan %>
-</td>
-<td>
+
+
   <%= form_for(loan) do |f| %>
-    <%= f.select(:status, Loan.statuses.map {|status| [status]}) %>
-    <td>
-    <button><%= f.submit 'Change status' %></button>
-    </td>
-  <% end %>
-</td>
+  <div class="field">
+  	<%= link_to loan.loan_name, loan %><br>
+    <%= f.select(:status, Loan.statuses.map {|status| [status.to_s.titleize, status]}) %>
+  </div>
+
+  <td>
+  	<button><%= f.submit 'Change status' %></button>
+  </td>
+
+
+
 <td>
-  <%= link_to("Delete loan", loan_path(loan), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless user == current_user %>
+  <%= link_to("Delete loan", loan_path(loan), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless loan.user == current_user %> |
+          <%= link_to("Edit", {:action => 'edit', :id => loan.id}, :class => 'action edit') %>|
+        <%= link_to("Show", {:action => 'show', :id => loan.id}, :class => 'action show') %>|
 </td>
+
+ <% end %>

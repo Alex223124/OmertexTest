@@ -1,14 +1,26 @@
-<td>
-  <%= link_to user.email, user %>
-</td>
-<td>
   <%= form_for(user) do |f| %>
-    <%= f.select(:role, User.roles.map {|role| [role]}) %>
-    <td>
-    <button><%= f.submit 'Change Role' %></button>
-    </td>
+  <% if @users.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
-</td>
-<td>
-  <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless user == current_user %>
-</td>
+
+
+  <div class="field">
+  	<%= link_to user.email, user %><br>
+    <%= f.select(:role, User.roles.map {|role| [role]}) %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Change Role' %>
+  </div>
+  	<td>
+    <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless user == current_user %>
+    </td>
+<% end %>

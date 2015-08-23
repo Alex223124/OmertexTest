@@ -15,12 +15,13 @@ class User
 
   
   # Hooks
-  before_save { self.email = email.downcase }                                              
+  before_save { self.email = email.downcase }     
+                                         
   
 
   # Associations
-  embeds_many :loans 
-  embeds_many :payments
+  has_many :loans 
+  has_many :payments
   
   # Active Record assc analog
   #has_many :loans
@@ -29,22 +30,38 @@ class User
   
 
   # Validations
-  validates :user_name, uniqueness: true, length: { minimum: 3, maximum: 40 }
-  validates :first_name, length: { minimum: 2, maximum: 20 }
-  validates :last_name, length: { minimum: 2, maximum: 20 }
   VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 105 },
                                 format: { with: VALID_EMAIL_REGEX },
                                 uniqueness: { case_sensitive: false }
-  validates :client_income, presence: true, numericality: { only_integer: true,
-                                                            grater_than: 100,
-                                                            less_than_or_equal_to: 500000 }  
+ 
   validates :password, length: {minimum: 6}       
   
 
   #Валидация ассоциаций
   validates_associated :loans, :payments
- 
+
+
+
+
+  # Концепция %-й ставки за год
+    # Если доход от 100 до 1500$ до % кредита
+    # Если доход больше либо равно 1501 и меньше либо равно 5000 то % кредита такой-то
+    # Есди доход больше либо равно 5001 $ и меньше либо равно 100 000 000 то % кредита такой-то    
+  def self.loan_rate_for_year(client_income)
+    x = client_income 
+    if x >= 100 && x <= 1500
+      puts 0.3
+    elsif x >= 1501 && x <= 5000
+      puts 0.2
+    elsif x >= 5001 && x <= 100000000
+      puts 0.1
+    else
+      puts "Error, Your income must be more than 100$ per month"
+    end
+  end
+
+
 
 
   # Data
@@ -52,7 +69,7 @@ class User
   field :first_name,  type: String, default: ""
   field :last_name,   type: String, default: ""
 
-  field :client_income, type: Integer
+  field :client_income, type: Integer 
 
   ## Database authenticatable
   field :email,              type: String, default: ""

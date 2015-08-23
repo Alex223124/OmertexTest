@@ -4,15 +4,9 @@
 <p class="loan_amount"><%= @loan.loan_amount %></p>
 
 
-<div id="loan_items_wrapper">
-  <%= render @loan.user %>
-  <div id="form">
-    <%= render "loans/loan" %>
-  </div>
-</div>
 
 <div class="links">
-  <%= link_to 'Edit', edit_loan_path(@loan) %> |
+  
   <%= link_to 'Delete', loan_path(@loan), method: :delete, data: { confirm: "Are you sure?" } %> |
   <%= link_to 'Back', loans_path %>
 </div>

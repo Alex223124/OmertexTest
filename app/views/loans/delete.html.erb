@@ -1,0 +1,19 @@
+<h1 class="loan_name">New Loan</h1>
+<h2> Delete Loan </h2>
+
+<%= form_for(:loan, :url => { :action => 'create', :id => @loan.id}) do |f| %>
+
+	<p> Are you sure you want to permanently delete this subject?</p>
+
+	<p class="referencename"><%= @loan.name %></p>
+
+	<div class="form-buttons">
+      <%= f.submit_tag ("Delete Loan") %>
+  	</div>
+
+	<div class="links">
+	  <%= link_to 'Back', loans_path %>
+	</div>
+
+<% end %>
+
