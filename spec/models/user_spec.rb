@@ -1,7 +1,7 @@
 require 'rails_helper'
 
   describe User do
-  	it "is valid with email a user income" do
+  	it "is valid with email and user income" do
   		user = create(:user)
   		expect(user).to be_valid
   	end

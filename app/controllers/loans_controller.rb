@@ -19,6 +19,7 @@ class LoansController < ApplicationController
     @user = User.find(current_user.id)
     @loan = @user.loans.new(secure_params)
     percente_rate_for_year
+    loan_name
     if @loan.save
       flash[:success] = "Your Loan has been created succesfully"
       redirect_to @loan
@@ -55,7 +56,7 @@ class LoansController < ApplicationController
   private
 
   def secure_params
-    params.require(:loan).permit(:loan_name, :loan_amount, :period, :status)
+    params.require(:loan).permit(:loan_amount, :period, :status)
   end
 
     # Концепция %-й ставки за год
@@ -73,6 +74,11 @@ class LoansController < ApplicationController
     else
       redirect_to loans_path, :alert => "Unable to create loan."
     end
+  end
+
+  # Кастомный метод который придумывает название для кредита
+  def loan_name
+    @loan.loan_name = "Loan Request registred: " + Time.now.to_s
   end
 
 end
