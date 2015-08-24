@@ -44,28 +44,8 @@ class User
 
 
 
-  # Концепция %-й ставки за год
-    # Если доход от 100 до 1500$ до % кредита
-    # Если доход больше либо равно 1501 и меньше либо равно 5000 то % кредита такой-то
-    # Есди доход больше либо равно 5001 $ и меньше либо равно 100 000 000 то % кредита такой-то    
-  def self.loan_rate_for_year(client_income)
-    x = client_income 
-    if x >= 100 && x <= 1500
-      puts 0.3
-    elsif x >= 1501 && x <= 5000
-      puts 0.2
-    elsif x >= 5001 && x <= 100000000
-      puts 0.1
-    else
-      puts "Error, Your income must be more than 100$ per month"
-    end
-  end
-
-
-
-
   # Data
-  field :user_name,   type: String, default: "" 
+  field :user_name,   type: String, default: ""
   field :first_name,  type: String, default: ""
   field :last_name,   type: String, default: ""
 

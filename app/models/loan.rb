@@ -38,6 +38,8 @@ class Loan
 
   field :description, type: String 
 
+  field :percente_rate, type: Float 
+
 
   
 end
