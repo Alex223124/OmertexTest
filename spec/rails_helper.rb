@@ -31,7 +31,7 @@ RSpec.configure do |config|
   
   # config.use_transactional_fixtures = false
   
-  # config.include FactoryGirl::Syntax::Methods
+  config.include FactoryGirl::Syntax::Methods
   
   # config.include Features::SessionHelpers, type: :feature 
   
