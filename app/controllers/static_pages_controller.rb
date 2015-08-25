@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   
   def index
   	if current_user
-  		redirect_to posts_path
+  		redirect_to loans_path
   	end
   end
   

@@ -18,13 +18,13 @@ class LoansController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @loan = @user.loans.new(secure_params)
-    percente_rate_for_year
+    percente_rate
     loan_name
     if @loan.save
       flash[:success] = "Your Loan has been created succesfully"
       redirect_to @loan
     else
-      render 'new'
+      redirect_to loans_path, :alert => "Unable to create loan."
     end
   end
 
@@ -59,22 +59,23 @@ class LoansController < ApplicationController
     params.require(:loan).permit(:loan_amount, :period, :status)
   end
 
-    # Концепция %-й ставки за год
+  # Концепция %-й ставки за год
     # Если доход больше 100 и меньше либо равно 1500$ то процентная ставка 30% годовых
     # Если доход больше либо равен 1501 и меньше либо равен 5000 то процентная ставка 20% годовых
     # Есди доход больше либо равен 5001 и меньше либо равен 100 000 000 то процентная ставка 10% годовых    
-  def percente_rate_for_year
+  def percente_rate
     x = @user.client_income 
     if x > 100 && x <= 1500
-      @loan.percente_rate = 0.3
+       @loan.percente_rate = 30
     elsif x >= 1501 && x <= 5000
-      @loan.percente_rate = 0.2
+       @loan.percente_rate = 20
     elsif x >= 5001 && x <= 100000000
-      @loan.percente_rate = 0.1
+       @loan.percente_rate = 10
     else
-      redirect_to loans_path, :alert => "Unable to create loan."
+      # Перенаправление есть в конце метода create
     end
   end
+
 
   # Кастомный метод который придумывает название для кредита
   def loan_name

@@ -51,6 +51,7 @@ class User
 
   field :client_income, type: Integer 
 
+
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""

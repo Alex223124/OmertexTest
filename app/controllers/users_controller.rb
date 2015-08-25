@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(secure_params)
+    percente_rate
     authorize User
     if @user.save
       flash[:success] = "Your account has been created succesfully"
@@ -62,6 +63,10 @@ class UsersController < ApplicationController
   def secure_params
     params.require(:user).permit(:email, :password, :client_income, :role)
   end
+
+
+  
+
 
 
 end

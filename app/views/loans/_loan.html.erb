@@ -1,25 +1,7 @@
-
-
-  <%= form_for(loan) do |f| %>
   <div class="field">
   	<%= link_to loan.loan_name, loan %><br>
-    <%= loan.loan_name %><br>
-    <%= loan.status %>
   </div>
 
-  <td>
-  	<button><%= f.submit 'Change status' %></button>
-  </td>
-
-
-
-<td>
-  <%= link_to("Delete loan", loan_path(loan), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless loan.user == current_user %> |
-          <%= link_to("Edit", {:action => 'edit', :id => loan.id}, :class => 'action edit') %>|
-        <%= link_to("Show", {:action => 'show', :id => loan.id}, :class => 'action show') %>|
-</td>
-
- <% end %>
-
-
- 
+<div class="links">
+  <%= link_to("Show", {:action => 'show', :id => loan.id}, :class => 'action show') %>
+</div> 

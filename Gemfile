@@ -27,7 +27,7 @@ gem 'rubocop', '~> 0.33.0'
 gem 'state_machine', '~> 1.2.0'
 
 # Админка представления
-gem 'activeadmin', github: 'activeadmin'
+gem 'rails_admin', '~> 0.6.8'
 
 
 # Авторизация, что могут делать различные пользователи прошедшие аунтефикацию

@@ -1,10 +1,7 @@
-<%= link_to("<<Back to List", {:action => 'index'}, :class => 'balck-link') %>
-
-
 <h1 class="loan_name">New Loan</h1>
-<h2> Loan is ... quote </h2>
 
 <%= form_for(:loan, :url => { :action => 'create'}) do |f| %>
+<th>Loan amount must be more than 100 (Ex: 101, 102, 500, 1000) </th>
 
 	<table summary="Loan form field">
 
@@ -33,4 +30,3 @@
 	</div>
 
 <% end %>
-

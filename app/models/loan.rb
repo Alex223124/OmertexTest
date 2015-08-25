@@ -22,13 +22,11 @@ class Loan
   # Data
   field :loan_name,   type: String 
   field :loan_amount, type: Integer 
+  field :percente_rate, type: String
 
   field :period,     type: Integer
 
   field :description, type: String 
-
-  field :percente_rate, type: Float 
-
 
   
 end

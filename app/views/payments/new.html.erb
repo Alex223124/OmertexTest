@@ -1,23 +1,31 @@
-<%= link_to("<<Back to List", {:action => 'index'}, :class => 'balck-link') %>
-
-
 <h1 class="payment_name">New Payment</h1>
+
+
+Please, select a loan for wich you want to pay.
+
 
 <%= form_for(:payment, :url => { :action => 'create'}) do |f| %>
 
+
+	<%= f.fields_for :loans do |f| %>
+	<tr>
+
+		<% loan_array = options_from_collection_for_select(Loan.all, :id, :loan_name) %>
+		<th><%= select_tag(loan_array) %><th>
+
+	</tr>
+	<% end %>
+
+
 	<table summary="Payment form field">
-		<tr>
-			<th>Purpose of Payment</th>
-			<th><%= f.text_field(:payment_name) %></td>
-		</tr>
 
 		<tr>
-			<th>Payment amount</th>
-			<th><%= f.number_field(:payment_amount) %></td>
+			<th>Payment amount (must be grater than 10)</th>
+			<th><%= f.number_field(:payment_amount) %></th>
 		</tr>
 		<tr>
 			<th>Additions</th>
-			<th><%= f.text_field(:description) %></td>
+			<th><%= f.text_field(:description) %></th>
 		<tr>
 	</table>
 
@@ -26,7 +34,7 @@
   	</div>
 
 	<div class="links">
-	  <%= link_to 'Back', loans_path %>
+	  <%= link_to 'Back', payments_path %>
 	</div>
 
 <% end %>

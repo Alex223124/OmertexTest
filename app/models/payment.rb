@@ -1,6 +1,9 @@
 class Payment
   include Mongoid::Document
 
+
+
+
   belongs_to :loan
   belongs_to :user
 
