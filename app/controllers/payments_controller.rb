@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
 
   def new
     @payment = Payment.new
-    @payment.loans.build
+    
   end
 
   def show
@@ -19,12 +19,13 @@ class PaymentsController < ApplicationController
 
   def create
     @user = User.find(current_user.id)
-    @loan = Loan.find(secure_params)
-    @payment = @user.loan.payments.new(secure_params)
+    @loan = Loan.find(params[:loan_id])
+    @payment = @loan.payments.build(secure_params)
     payment_name
+    set_user_id
     if @payment.save
       flash[:success] = "Your Payment was committed succesfully"
-      redirect_to @payment
+      redirect_to loan_path(@loan)
     else
       render 'new'
     end
@@ -57,12 +58,15 @@ class PaymentsController < ApplicationController
   private
 
   def secure_params
-    params.require(:payment).permit(:payment_amount, :payment_name, :description, 
-    loans_attributes: [:loan_id])
+    params.require(:payment).permit(:payment_amount, :payment_name, :description)
   end
 
   def payment_name
     @payment.payment_name = "Payment registred at: " + Time.now.to_s
+  end
+
+  def set_user_id
+    @payment.user_id = current_user.id
   end
 
 end

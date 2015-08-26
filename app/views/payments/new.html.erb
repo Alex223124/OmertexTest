@@ -6,17 +6,6 @@ Please, select a loan for wich you want to pay.
 
 <%= form_for(:payment, :url => { :action => 'create'}) do |f| %>
 
-
-	<%= f.fields_for :loans do |f| %>
-	<tr>
-
-		<% loan_array = options_from_collection_for_select(Loan.all, :id, :loan_name) %>
-		<th><%= select_tag(loan_array) %><th>
-
-	</tr>
-	<% end %>
-
-
 	<table summary="Payment form field">
 
 		<tr>
@@ -33,9 +22,7 @@ Please, select a loan for wich you want to pay.
       <%= f.submit "Accept" %>
   	</div>
 
-	<div class="links">
-	  <%= link_to 'Back', payments_path %>
-	</div>
+
 
 <% end %>
 
