@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :loans do
   	resources :payments
   end
+
+  get '/payments', to: "payments#index"
   
   
 end

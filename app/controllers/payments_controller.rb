@@ -4,7 +4,8 @@ class PaymentsController < ApplicationController
 
   
   def index
-    @payments = Payment.all
+    @user = User.find(current_user.id)
+    @payments = @user.payments
     #authorize User
   end
 
