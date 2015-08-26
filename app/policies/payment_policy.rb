@@ -10,7 +10,7 @@ class PaymentPolicy
 	# Администратор может проматривать список платежей пользователя
 	# Пользователь может проматривать список всех своих платежей по кредиту(-ам)
 	def index?
-		@current_user.admin? || @current_user == @payment.user 
+		@current_user.admin? || @current_user
 	end
 
 	# Только пользователь может делать новые платежи

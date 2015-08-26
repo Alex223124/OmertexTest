@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @payments = @user.payments
-    authorize User
+    authorize Payment
   end
 
   def new
@@ -16,7 +16,9 @@ class PaymentsController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
     @payment = Payment.find(params[:id])
+    @loan = Loan.find(params[:loan_id])
     authorize @payment
   end
 

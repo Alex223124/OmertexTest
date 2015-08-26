@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   get '/payments', to: "payments#index"
+  get '/loans/:id/payments', to:"payments#loan_payments"
+
   
   
 end

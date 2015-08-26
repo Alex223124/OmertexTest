@@ -1,5 +1,4 @@
-  <div class="field">
-    </h1>
-    <%= link_to payment.payment_name, payments_path %><br>
-    </h1>
+<div class="field">
+    <!--/loans/:loan_id/payments/:id -->
+    <%= link_to payment.payment_name, loan_payment_path(payment.loan, payment) %>
   </div>

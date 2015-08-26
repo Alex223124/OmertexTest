@@ -1,12 +1,12 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">Payments Datails<%= notice %></p>
 
-<p2 class="payment_name"><%= @payment.payment_name %></p2>
-<p class="payment_amount"><%= @payment.payment_amount %></p>
-
+###########################################################################
+<p class="payment_name"><%= @payment.payment_name %></p>
+<p class="payment_amount">Payment amount: <%= @payment.payment_amount %></p>
+###########################################################################
 
 
 <div class="links">
   
-  <%= link_to 'Delete', payment_path(@payment), method: :delete, data: { confirm: "Are you sure?" } %> |
   <%= link_to 'Back', payments_path %>
 </div>
