@@ -4,7 +4,8 @@ class LoansController < ApplicationController
 
   
   def index
-    @loans = Loan.all
+    @user = User.find(current_user.id)
+    @loans = @user.loans
   end
 
   def new
