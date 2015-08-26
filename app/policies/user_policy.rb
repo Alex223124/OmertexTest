@@ -25,13 +25,14 @@ class UserPolicy
 		@current_user.admin? || @current_user == @user
 	end
 
-	# Только Админ может исправлять регистрационные данные юзера
+	# Администратор может исправлять регистрационные данные пользователя
+	# Пользователь может исправлять регистрационные данные пользователя
 	def edit?
-		@current_user.admin?
+		@current_user.admin? || @current_user == @user
 	end
 
 	def update?
-		@current_user.admin?
+		@current_user.admin? || @current_user == @user
 	end
 
 	# Только админ может удалять юзера
