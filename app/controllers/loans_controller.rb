@@ -1,19 +1,22 @@
 class LoansController < ApplicationController
-  #before_filter :authenticate_user!
-  #after_action :verify_authorized
+  before_filter :authenticate_user!
+  after_action :verify_authorized
 
   
   def index
     @user = User.find(current_user.id)
-    @loans = @user.loans
+    @loans = @user.loans  
+    authorize Loan
   end
 
   def new
     @loan = Loan.new
+    authorize Loan
   end
 
   def show
     @loan = Loan.find(params[:id])
+    authorize @loan
   end
 
   def create
@@ -21,6 +24,7 @@ class LoansController < ApplicationController
     @loan = @user.loans.new(secure_params)
     percente_rate
     loan_name
+    authorize @loan
     if @loan.save
       flash[:success] = "Your Loan has been created succesfully"
       redirect_to @loan
@@ -31,10 +35,12 @@ class LoansController < ApplicationController
 
   def edit
     @loan = Loan.find(params[:id])
+    authorize Loan
   end
 
   def update
     @loan = Loan.find(params[:id])
+    authorize @loan
     if @loan.update_attributes(secure_params)
       redirect_to loans_path, :notice => "Loan updated."
     else
@@ -44,10 +50,12 @@ class LoansController < ApplicationController
 
   def delete
     @loan = Loan.find(params[:id])
+    authorize @loan
   end
 
   def destroy
     loan = Loan.find(params[:id])
+    authorize loan
     loan.destroy
     redirect_to loans_path, :notice => "Loan deleted."
   end

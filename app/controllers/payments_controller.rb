@@ -1,21 +1,23 @@
 class PaymentsController < ApplicationController
-  #before_filter :authenticate_user!
-  #after_action :verify_authorized
+  before_filter :authenticate_user!
+  after_action :verify_authorized
 
   
   def index
     @user = User.find(current_user.id)
     @payments = @user.payments
-    #authorize User
+    authorize User
   end
 
   def new
     @payment = Payment.new
+    authorize @payment
     
   end
 
   def show
     @payment = Payment.find(params[:id])
+    authorize @payment
   end
 
   def create
@@ -24,6 +26,7 @@ class PaymentsController < ApplicationController
     @payment = @loan.payments.build(secure_params)
     payment_name
     set_user_id
+    authorize @payment
     if @payment.save
       flash[:success] = "Your Payment was committed succesfully"
       redirect_to loan_path(@loan)
@@ -34,10 +37,12 @@ class PaymentsController < ApplicationController
 
   def edit
     @payment = Payment.find(params[:id])
+    authorize Payment
   end
 
   def update
     @payment = Payment.find(params[:id])
+    authorize @payment
     if @payment.update_attributes(secure_params)
       redirect_to payments_path, :notice => "Payment details updated."
     else
@@ -47,10 +52,12 @@ class PaymentsController < ApplicationController
 
   def delete
     @payment = Payment.find(params[:id])
+    authorize @payment
   end
 
   def destroy
     payment = Payment.find(params[:id])
+    authorize payment
     payment.destroy
     redirect_to payments_path, :notice => "Payment deleted."
   end

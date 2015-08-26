@@ -1,31 +1,32 @@
 class LoanPolicy
 
-	attr_reader :current_user, :model 
+	attr_reader :current_user, :loan 
 
-	def initialize(current_user, model)
+	def initialize(current_user, loan)
 		@current_user = current_user
-		@user = model
+		@loan = loan
 	end
 
 	# Админ может просматривать список всех кредитов юзера
 	# Юзер может просматривать список всех своих кредитов
 	def index?
-		@current_user.admin? || @current_user == @user
+		@current_user.admin? || @current_user
 	end
 
-	# Только юзер может создавать новые кредиты
+	# Админ может создавать новые кредиты
+	# Юзер может создавать новые кредиты
 	def new?
-		@current_user == @user
+		@current_user.admin? || @current_user
 	end
 
 	def create?
-		@current_user == @user
+		@current_user.admin? || @current_user == @loan.user 
 	end
 
 	# Админ может просматривать данные кредита юзера
 	# Юзер может просматривать данные своего кредита
 	def show?
-		@current_user.admin? || @current_user == @user
+		@current_user.admin? || @current_user == @loan.user
 	end
 
 	# Только админ может редактировать данные кредита
