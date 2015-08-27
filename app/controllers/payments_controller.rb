@@ -1,12 +1,18 @@
 class PaymentsController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
+  before_action :set_user 
 
   
   def index
     @user = User.find(current_user.id)
+    if current_user.admin?
+      @payments = Payment.all 
+      authorize Payment
+    else
     @payments = @user.payments
     authorize Payment
+    end
   end
 
   def new
@@ -77,6 +83,10 @@ class PaymentsController < ApplicationController
 
   def set_user_id
     @payment.user_id = current_user.id
+  end
+
+  def set_user
+    @user = User.find(current_user.id)
   end
 
 end

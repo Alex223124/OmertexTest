@@ -1,6 +1,7 @@
 class LoansController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
+  before_action :set_user 
 
   
   def index
@@ -89,6 +90,10 @@ class LoansController < ApplicationController
   # Кастомный метод который придумывает название для кредита
   def loan_name
     @loan.loan_name = "Loan Request registred: " + Time.now.to_s
+  end
+
+  def set_user
+    @user = User.find(current_user.id)
   end
 
 end

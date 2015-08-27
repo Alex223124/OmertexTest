@@ -8,7 +8,7 @@
     <%= f.text_field :user_name, autofocus: true %>
   </div>
 
-  <% if @user.admin? %>
+  <% if @current_user.admin? %>
     <div class="field">
     <%= f.label :role %><br />
     <%= f.select(:role, User.roles.map {|role| [role]}) %>
@@ -63,4 +63,8 @@
     <%= link_to 'Show user', @user %>
   </div>
 
-
+  <% if @current_user.admin? %>
+    <div class="links">
+        <%= link_to("Delete user", user_path(@user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') %>
+    </div>
+  <% end %>
