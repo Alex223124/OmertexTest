@@ -35,4 +35,8 @@
 	  <%= link_to 'Back', loans_path %>
 	</div>
 
+	 <div class="links">
+      <%= link_to("Delete Loan", loan_path(@loan), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') %>
+    </div>
+
 <% end %>

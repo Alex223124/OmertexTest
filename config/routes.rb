@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   end
 
   get '/payments', to: "payments#index"
-  get '/loans/:id/payments', to:"payments#loan_payments"
 
-  
-  
+  #Платежи по конкретному кредиту пользователем (кастомный метод для админа)
+  get '/users/:id/loans/:id/payments', to: "payments#loan_payments"
+
+  # Платежи конкретного юзера (кастомный метод для админа)
+  http://localhost:3000/users/1/payments
+
+  # Кредиты конкретного юзера (кастомные метод для админа)
+  users/1/loans 
+
 end

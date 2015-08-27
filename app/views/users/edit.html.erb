@@ -1,7 +1,7 @@
 <h1 class="user_name">Edit User Details</h1>
 
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :url => { :action => 'update'}, :method => "get" do |f| %>
 
   <div class="field">
     <%= f.label :user_name %><br />

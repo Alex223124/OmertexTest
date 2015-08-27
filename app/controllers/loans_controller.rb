@@ -6,8 +6,13 @@ class LoansController < ApplicationController
   
   def index
     @user = User.find(current_user.id)
-    @loans = @user.loans  
-    authorize Loan
+    if current_user.admin?
+      @loans = Loan.all
+      authorize Loan
+    else
+      @loans = @user.loans  
+      authorize Loan
+    end
   end
 
   def new

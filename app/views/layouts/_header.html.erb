@@ -4,10 +4,11 @@
 
           <% if current_user.admin? %>
             <li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
-            <li class="nav-link"><%= link_to "My Account", user_path(@user) %></li>
+            <li class="nav-link"><%= link_to "My Account(Admin)", user_path(@user) %></li>
             <li class="nav-link"><%= link_to "List of All Users", users_path %></li>
-            <li class="nav-link"><%= link_to "List of All Users' Payments", "#" %></li>
-            <li class="nav-link"><%= link_to "List of All Users' Loans", "#" %></li>
+            <li class="nav-link"><%= link_to "List of All Users' Payments", :controller => "payments", :action => "index", :id => @payments %></li>
+            <li class="nav-link"><%= link_to "List of All Users' Loans", :controller => "loans", :action => "index", :id => @loans %></li>
+
           <% else %>
             <li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
             <li class="nav-link"><%= link_to "List of My Loans", loans_path %></li>

@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
-  before_action :set_user 
+  before_action :set_user
 
 
   
   def index
     @users = User.all
-    @user = User.find(current_user.id)
     authorize User
   end
 

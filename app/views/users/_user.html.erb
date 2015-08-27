@@ -1,6 +1,6 @@
   <div class="field">
-     	<%= link_to user.email, user %><br>
-      Client id: <%= link_to user.user_id, user %><br>
+     	User email: <%= link_to user.email, user %><br>
+      Client id: <%= link_to user.id, user %><br>
     <div class="links">
       <%= link_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action edit') %>
     </div>
