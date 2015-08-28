@@ -1,6 +1,12 @@
-  <div class="field">
+<%= render 'shared/errors', obj: user %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+
+    <div class="field">
      	User email: <%= link_to user.email, user %><br>
       Client id: <%= link_to user.id, user %><br>
+    </div>
     <div class="links">
       <%= link_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action edit') %>
     </div>
@@ -8,5 +14,5 @@
       <%= link_to("Show", {:action => 'show', :id => user.id}, :class => 'action show') %>
     </div>
        <div class="links">
-    ######################################################################################
   </div>
+</div>  

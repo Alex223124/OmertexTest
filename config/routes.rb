@@ -18,10 +18,8 @@ Rails.application.routes.draw do
   get 'users/:id/current_user_loans', to: "users#current_user_loans"
 
 
-  # Платежи конкретного юзера (кастомный метод для админа)
-  #http://localhost:3000/users/1/payments
-
-  # Кредиты конкретного юзера (кастомные метод для админа)
-  #users/1/loans 
-
+  get '/take_loans', to: "static_pages#take_loans"
+  get '/make_payments', to: "static_pages#make_payments"
+  get '/be_superhero', to: "static_pages#be_superhero"
+  
 end

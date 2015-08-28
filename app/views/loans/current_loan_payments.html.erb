@@ -1,9 +1,9 @@
+<%= render 'shared/page_title', title: "List of Loan's Payments" %>
 <% if @payment.any? %>
 
 <div class="bigbox">
   <div class="box">
     <table class="table-minimal">
-      <h1> List of Loan's Payments </h1>
       <tbody>
         <% @payment.each do |payment| %>
           <tr>
@@ -17,6 +17,14 @@
 
 <% else %>
 
-   <p>No Payments Have Been Made.</p>
+   <div class="row">
+  <div class="well col-md-8 col-md-offset-2"> 
+
+<p>No payments has been made.</p>
+
+<%= link_to "Take a Sweet New Loan!", :controller => "loans", :action => "new", :id => @loans %>
+
+  </div>
+</div>
 
 <% end %> 

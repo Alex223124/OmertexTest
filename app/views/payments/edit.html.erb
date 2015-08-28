@@ -1,25 +1,30 @@
-<h1 class="payment_name">Edit Payment Details</h1>
+<%= render 'shared/page_title', title: "Edit Payments Details" %>
+<%= render 'shared/errors', obj: @payment %>
 
-<%= form_for @payment, :url => { :action => 'update'}, :method => "get" do |f| %>
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+	<%= form_for @payment, :url => { :action => 'update'}, :method => "get" do |f| %>
 
-	<table summary="Payment form fields">
-		<tr>
-			<th>Payments Purpose name</th>
-			<td><%= f.text_field(:payment_name) %></td>
-		</tr>
+		<table summary="Payment form fields">
+			<tr>
+				<th>Payments Purpose name</th>
+				<td><%= f.text_field(:payment_name) %></td>
+			</tr>
 
-		<tr>
-			<th>Payment amount</th>
-			<td><%= f.number_field(:payment_amount) %></td>
-		</tr>
-			
-	</table>  
-	<div class="form-buttons">
-      <%= submit_tag("Edit Payment Details") %>
-  	</div>
+			<tr>
+				<th>Payment amount</th>
+				<td><%= f.number_field(:payment_amount) %></td>
+			</tr>
+				
+		</table>  
+		<div class="form-buttons">
+	      <%= submit_tag("Edit Payment Details") %>
+	  	</div>
 
-	<div class="links">
-	  <%= link_to 'Back', loan_payments_path(@payment) %>
-	</div>
+		<div class="links">
+		  <%= link_to 'Back', loan_payments_path(@payment) %>
+		</div>
 
-<% end %>
+	<% end %>
+  </div>
+</div>  

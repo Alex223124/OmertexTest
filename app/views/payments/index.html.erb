@@ -1,9 +1,11 @@
+<%= render 'shared/page_title', title: "All Payments" %>
+
+
 <% if @payments.any? %>
 
 <div class="bigbox">
   <div class="box">
     <table class="table-minimal">
-      <h1> List of Payments </h1>
       <tbody>
         <% @payments.each do |payment| %>
           <tr>

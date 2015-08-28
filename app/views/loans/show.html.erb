@@ -1,6 +1,10 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/errors', obj: @loan %>
+<%= render 'shared/page_title', title: @loan.loan_name %>
 
-##################################################################################
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2"> 
+
+#################################################################################
 <p class="loan_name">Name: <%= @loan.loan_name %></p>
 <p class="loan_amount">Loan amount: <%= @loan.loan_amount %></p>
 <p class="loan_status">Your loan status is <%= @loan.status %>.</p>
@@ -22,6 +26,9 @@
    <%= link_to "Make New Payment", :controller => "payments", :action => "new", :id => @loan.id %>
 </div>
 
+
+	</div>
+</div>
 
 
 

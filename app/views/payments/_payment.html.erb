@@ -1,15 +1,28 @@
+<%= render 'shared/errors', obj: payment %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2"> 
+
 <div class="field">
     <!--/loans/:loan_id/payments/:id -->
     <%= link_to payment.payment_name, loan_payment_path(payment.loan, payment) %>
     Client id: <%= payment.user_id %>
     Loan id: <%= payment.loan_id %>
-    <div class="links">
-      <%= link_to 'Edit Payment Details', edit_loan_payment_path(payment.loan, payment) %>
-    </div>
+    
+    <% if @current_user.admin? %>
+      <div class="links">
+        <%= link_to 'Edit Payment Details', edit_loan_payment_path(payment.loan, payment) %>
+      </div>
+    <% end %>
+
+
      <div class="links">
       <%= link_to 'Show Payment', loan_payment_path(payment.loan, payment) %>
     </div>
-    ###################################################################################### 
+
+      </div>
+</div>
+
  </div>
 
 

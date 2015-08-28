@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Bank App</title>
   <title> Omertex Test App </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,12 +12,12 @@
   <%= render 'layouts/header' %>
 
   <div class="container">
-    <% flash.each do |message_type, message| %>
-      <div id="flash" class="flash-<%= message_type %>"><%= message %></div>
-    <% end %>
-
+  <%= render 'layouts/messages' %>
     <%= yield %>
-  </div>
+
+  <%= render 'layouts/footer' %>
+
+    </div>
 
 </body>
 </html>

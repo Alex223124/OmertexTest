@@ -1,17 +1,22 @@
-<p id="notice">Payment Datails<%= notice %></p>
-
-###########################################################################
-<p class="payment_name"><%= @payment.payment_name %></p>
-<p class="payment_amount">Payment amount: <%= @payment.payment_amount %></p>
-<p> Client id: <%= @payment.user_id %></p>
-<p> Loan id: <%= @payment.loan_id %></p>
-###########################################################################
+<%= render 'shared/page_title', title: @payment.payment_name %>
+<%= render 'shared/errors', obj: @payment %>
 
 
-<div class="links">
-  <%= link_to 'Back', payments_path %>
-</div>
-
-<div class="links">
-  <%= link_to 'Edit Payment Details', edit_loan_payment_path %>
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">
+		###########################################################################
+		<p class="payment_name"><%= @payment.payment_name %></p>
+		<p class="payment_amount">Payment amount: <%= @payment.payment_amount %></p>
+		<p> Client id: <%= @payment.user_id %></p>
+		<p> Loan id: <%= @payment.loan_id %></p>
+		###########################################################################
+		<div class="links">
+		  <%= link_to 'Back', payments_path %>
+		</div>
+		<% if @current_user.admin? %>
+			<div class="links">
+			  <%= link_to 'Edit Payment Details', edit_loan_payment_path %>
+			</div>
+		<% end %>
+	</div>
 </div>

@@ -1,5 +1,5 @@
-<h1 class="loan_name">New Loan</h1>
-<h2> Delete Loan </h2>
+<%= render 'shared/errors', obj: @loan %>
+<%= render 'shared/page_title', title: "Delete Loan" %>
 
 <%= form_for(:loan, :url => { :action => 'create', :id => @loan.id}) do |f| %>
 

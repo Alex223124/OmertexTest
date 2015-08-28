@@ -1,5 +1,8 @@
-<h1 class="loan_name">Edit Loan Details</h1>
+<%= render 'shared/errors', obj: @loan %>
+<%= render 'shared/page_title', title: "Edit Loan Details" %>
 
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2"> 
 
 <%= form_for @loan do |f| %>
 	<table summary="Loan form fields">
@@ -38,5 +41,8 @@
 	 <div class="links">
       <%= link_to("Delete Loan", loan_path(@loan), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') %>
     </div>
+
+      </div>
+</div>
 
 <% end %>

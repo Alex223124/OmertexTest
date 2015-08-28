@@ -1,28 +1,26 @@
-<h1 class="payment_name">New Payment</h1>
+<%= render 'shared/page_title', title: "Create a new Payment" %>
+<%= render 'shared/errors', obj: @payment %>
 
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">
+		<%= form_for(:payment, :url => { :action => 'create'}) do |f| %>
 
-Please, select a loan for wich you want to pay.
+			<table summary="Payment form field">
 
+				<tr>
+					<th>Payment amount (must be grater than 10)</th>
+					<td><%= f.number_field(:payment_amount) %></td>
+				</tr>
+				<tr>
+					<th>Additions</th>
+					<td><%= f.text_field(:description) %></td>
+				<tr>
+			</table>
 
-<%= form_for(:payment, :url => { :action => 'create'}) do |f| %>
+			<div class="actions">
+		      <%= f.submit "Accept" %>
+		  	</div>
 
-	<table summary="Payment form field">
-
-		<tr>
-			<th>Payment amount (must be grater than 10)</th>
-			<td><%= f.number_field(:payment_amount) %></td>
-		</tr>
-		<tr>
-			<th>Additions</th>
-			<td><%= f.text_field(:description) %></td>
-		<tr>
-	</table>
-
-	<div class="actions">
-      <%= f.submit "Accept" %>
-  	</div>
-
-
-
-<% end %>
-
+		<% end %>
+	</div>
+</div>

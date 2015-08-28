@@ -1,32 +1,35 @@
-<h1 class="loan_name">New Loan</h1>
+<%= render 'shared/errors', obj: @loan %>
+<%= render 'shared/page_title', title: "New Loan" %>
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">		
+		<%= form_for(:loan, :url => { :action => 'create'}) do |f| %>
+			<th>Loan amount must be more than 100 (Ex: 101, 102, 500, 1000) </th>
+				<table summary="Loan form field">
 
-<%= form_for(:loan, :url => { :action => 'create'}) do |f| %>
-<th>Loan amount must be more than 100 (Ex: 101, 102, 500, 1000) </th>
+					<tr>
+						<th>Loan amount</th>
+						<td><%= f.number_field(:loan_amount) %></td>
+					</tr>
 
-	<table summary="Loan form field">
+					<tr>
+						<th>Period (months)</th>
+						<td><%= f.number_field(:period) %></td>
+					</tr>
 
-		<tr>
-			<th>Loan amount</th>
-			<td><%= f.number_field(:loan_amount) %></td>
-		</tr>
+					<tr>
+						<th>Additions</th>
+						<td><%= f.text_field(:description) %></td>
+					<tr>
+					</table>
 
-		<tr>
-			<th>Period (months)</th>
-			<td><%= f.number_field(:period) %></td>
-		</tr>
+					<div class="actions">
+				      <%= f.submit "Create new Loan" %>
+				  	</div>
 
-		<tr>
-			<th>Additions</th>
-			<td><%= f.text_field(:description) %></td>
-		<tr>
-	</table>
+					<div class="links">
+					  <%= link_to 'Back', loans_path %>
+					</div>
 
-	<div class="actions">
-      <%= f.submit "Create new Loan" %>
-  	</div>
-
-	<div class="links">
-	  <%= link_to 'Back', loans_path %>
+		<% end %>
 	</div>
-
-<% end %>
+</div>
