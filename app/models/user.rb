@@ -17,18 +17,10 @@ class User
   # Hooks
   before_save { self.email = email.downcase }     
                                          
-  
-
   # Associations
   has_many :loans 
   has_many :payments
   
-  # Active Record assc analog
-  #has_many :loans
-  #has_many :payments
-
-  
-
   # Validations
   VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 105 },
@@ -49,7 +41,7 @@ class User
   field :first_name,  type: String, default: ""
   field :last_name,   type: String, default: ""
 
-  field :client_income, type: Integer 
+  field :client_income, type: Integer, default: nil
 
 
   ## Database authenticatable

@@ -94,7 +94,7 @@ class LoansController < ApplicationController
          @loan.percente_rate = 30
       elsif x >= 1501 && x <= 5000
          @loan.percente_rate = 20
-      elsif x >= 5001 && x <= 100000000
+      elsif x >= 5001 && x <= 100000000000000
          @loan.percente_rate = 10
       else
         # Перенаправление есть в конце метода create
