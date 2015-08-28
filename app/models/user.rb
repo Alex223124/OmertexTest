@@ -30,7 +30,7 @@ class User
   validates :password, presence:true, length: {minimum: 6}       
   
 
-  #Валидация ассоциаций
+  # Валидация ассоциаций
   validates_associated :loans, :payments
 
 

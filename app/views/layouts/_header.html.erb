@@ -4,36 +4,38 @@
 
             <% if user_signed_in? %>
 
-          <% if current_user.admin? %>
-            <li class="nav-link "><%= link_to "Bank App", root_path, class: "btn btn-lg boder-blue-logo logo-hover", id: "logo" %></li>
-            <li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
-            <li class="nav-link"><%= link_to "My Account(Admin)", user_path(@user) %></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Menu <b class="caret"></b>
-                </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-link"><%= link_to "List of All Users", users_path %></li>
-                    <li class="nav-link"><%= link_to "List of All Users' Payments", :controller => "payments", :action => "index", :id => @payments %></li>
-                    <li class="nav-link"><%= link_to "List of All Users' Loans", :controller => "loans", :action => "index", :id => @loans %></li>
-                  </ul>
-              </li>     
+              <% if current_user.admin? %>
+                <li class="nav-link "><%= link_to "Bank App", root_path, class: "btn btn-lg boder-blue-logo logo-hover", id: "logo" %></li>
+                <li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+                <li class="nav-link"><%= link_to "My Account(Admin)", user_path(@user) %></li>
+                <li class="nav-link"><%= link_to "Second version of admin panel", rails_admin_path %></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Menu <b class="caret"></b>
+                    </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-link"><%= link_to "List of All Users", users_path %></li>
+                        <li class="nav-link"><%= link_to "List of All Users' Payments", :controller => "payments", :action => "index", :id => @payments %></li>
+                        <li class="nav-link"><%= link_to "List of All Users' Loans", :controller => "loans", :action => "index", :id => @loans %></li>
+                      </ul>
+                  </li>     
 
-          <% else %>
-            <li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
-            <li class="nav-link"><%= link_to "My Account", user_path(@user) %></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Menu <b class="caret"></b>
-                </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-link"><%= link_to "List of My Loans", loans_path %></li>
-                    <li class="nav-link"><%= link_to "List of My Payments", payments_path %></li>
-                    <li class="nav-link"><%= link_to "Get a new loan", :controller => "loans", :action => "new", :id => @loans %></li>
-                  </ul>
-              </li>
-              
-          <% end %>
+              <% else %>
+
+                <li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+                <li class="nav-link"><%= link_to "My Account", user_path(@user) %></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Menu <b class="caret"></b>
+                    </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-link"><%= link_to "List of My Loans", loans_path %></li>
+                        <li class="nav-link"><%= link_to "List of My Payments", payments_path %></li>
+                        <li class="nav-link"><%= link_to "Get a new loan", :controller => "loans", :action => "new", :id => @loans %></li>
+                      </ul>
+                  </li>
+                  
+              <% end %>
 
         <% else %>
           <li class="nav-link"><%= link_to "Log In", new_user_session_path %></li>
