@@ -12,7 +12,7 @@ class UserPolicy
 	end
 
 	# Только администратор по данному методу контроллера может видеть все платежи пользователя
-	def all_user_payments?
+	def current_user_loans?
 		@current_user.admin?
 	end
 

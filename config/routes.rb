@@ -9,9 +9,13 @@ Rails.application.routes.draw do
   end
 
   get '/payments', to: "payments#index"
+  get 'loans/:id/payments/new', to: 'payments#new'
 
   # Список всех платежей по конкретному кредиту пользователя (кастомный метод и роут для админа)
   get 'loans/:id/current_loan_payments', to: "loans#current_loan_payments"
+
+  # Администратор может просматривать все кредиты выбранного пользователя в виде списка
+  get 'users/:id/current_user_loans', to: "users#current_user_loans"
 
 
   # Платежи конкретного юзера (кастомный метод для админа)

@@ -16,7 +16,7 @@ class PaymentPolicy
 	# Администратор может создавать новые платежи
 	# Пользователь может создавать новые платежи 
 	def new?
-		@current_user == @payment.user
+		@current_user 
 	end
 
 	def create?

@@ -12,12 +12,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @current_user_loans = User.find_by(user_id: @user.id)
     authorize @user
   end
 
-  def all_user_payments
+  def current_user_loans
     @user = User.find(params[:id])
-    @payments = @user.payments
+    @loan = Loan.find_by(loan_id: @user.id).to_a
     authorize User
   end
 

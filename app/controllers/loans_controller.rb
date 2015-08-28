@@ -86,15 +86,19 @@ class LoansController < ApplicationController
     # Если доход больше либо равен 1501 и меньше либо равен 5000 то процентная ставка 20% годовых
     # Есди доход больше либо равен 5001 и меньше либо равен 100 000 000 то процентная ставка 10% годовых    
   def percente_rate
-    x = @user.client_income 
-    if x > 100 && x <= 1500
-       @loan.percente_rate = 30
-    elsif x >= 1501 && x <= 5000
-       @loan.percente_rate = 20
-    elsif x >= 5001 && x <= 100000000
-       @loan.percente_rate = 10
+    if @user.client_income.nil?
+      # Перенаправление есть вконце метода креейт
     else
-      # Перенаправление есть в конце метода create
+      x = @user.client_income 
+      if x > 100 && x <= 1500
+         @loan.percente_rate = 30
+      elsif x >= 1501 && x <= 5000
+         @loan.percente_rate = 20
+      elsif x >= 5001 && x <= 100000000
+         @loan.percente_rate = 10
+      else
+        # Перенаправление есть в конце метода create
+      end
     end
   end
 
