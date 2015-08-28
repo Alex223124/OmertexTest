@@ -13,6 +13,13 @@ class LoanPolicy
 		@current_user.admin? || @current_user
 	end
 
+	# Только администратор по данному методу контроллера 
+	# может видеть все платежи пользователя
+	# по конкретному кредиту
+	def current_loan_payments?
+		@current_user.admin?
+	end
+
 	# Админ может создавать новые кредиты
 	# Юзер может создавать новые кредиты
 	def new?

@@ -1,6 +1,6 @@
   <div class="field">
-  	<%= link_to loan.loan_name, loan %><br>
-  	Loan id: <%= loan.id %><br>
+    <%= link_to loan.loan_name, loan %><br>
+    Loan id: <%= loan.id %><br>
     Loan status: <%= loan.status %><br>
     <div class="links">
       <%= link_to("Edit Loan", {:action => 'edit', :id => loan.id}, :class => 'action edit') %>

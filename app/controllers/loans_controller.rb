@@ -15,6 +15,12 @@ class LoansController < ApplicationController
     end
   end
 
+  def current_loan_payments
+    @loan = Loan.find(params[:id])
+    @payment = Payment.find_by(loan_id: @loan.id).to_a
+    authorize Loan
+  end
+
   def new
     @loan = Loan.new
     authorize Loan
@@ -22,6 +28,7 @@ class LoansController < ApplicationController
 
   def show
     @loan = Loan.find(params[:id])
+    @current_loan_payments = Payment.find_by(loan_id: @loan.id)
     authorize @loan
   end
 

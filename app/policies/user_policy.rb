@@ -11,6 +11,11 @@ class UserPolicy
 		@current_user.admin?
 	end
 
+	# Только администратор по данному методу контроллера может видеть все платежи пользователя
+	def all_user_payments?
+		@current_user.admin?
+	end
+
 	# Только админ может создавать юзеров через специальную форму
 	def new?
 		@current_user.admin?

@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def all_user_payments
+    @user = User.find(params[:id])
+    @payments = @user.payments
+    authorize User
+  end
+
   def new
     @user = User.new
     authorize User
