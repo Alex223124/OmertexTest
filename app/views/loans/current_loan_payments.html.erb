@@ -1,0 +1,22 @@
+<% if @payment.any? %>
+
+<div class="bigbox">
+  <div class="box">
+    <table class="table-minimal">
+      <h1> List of Loan's Payments </h1>
+      <tbody>
+        <% @payment.each do |payment| %>
+          <tr>
+            <%= render payment %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% else %>
+
+   <p>No Payments Have Been Made.</p>
+
+<% end %> 

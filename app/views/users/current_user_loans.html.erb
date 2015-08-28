@@ -1,0 +1,22 @@
+<% if @loan.any? %>
+
+<div class="bigbox">
+  <div class="box">
+    <table class="table-minimal">
+      <h1> List of User's Loans </h1>
+      <tbody>
+        <% @loan.each do |payment| %>
+          <tr>
+            <%= render payment %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% else %>
+
+   <p>No Loan Have Been Taken.</p>
+
+<% end %> 
