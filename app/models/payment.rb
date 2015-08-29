@@ -8,7 +8,7 @@ class Payment
   less_than_or_equal_to: 500000 }
 
   # Data
-  field :payment_name, ype: String
+  field :payment_name, type: String
   field :payment_amount, type: Integer
   field :description, type: String 
   
