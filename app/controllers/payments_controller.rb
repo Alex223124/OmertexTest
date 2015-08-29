@@ -5,7 +5,6 @@ class PaymentsController < ApplicationController
 
   
   def index
-    @user = User.find(current_user.id)
     if current_user.admin?
       @payments = Payment.all
       authorize Payment
@@ -22,14 +21,12 @@ class PaymentsController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
     @payment = Payment.find(params[:id])
     @loan = Loan.find(params[:loan_id])
     authorize @payment
   end
 
   def create
-    @user = User.find(current_user.id)
     @loan = Loan.find(params[:loan_id])
     @payment = @loan.payments.build(secure_params)
     payment_name
@@ -37,7 +34,7 @@ class PaymentsController < ApplicationController
     authorize @payment
     if @payment.save
       flash[:success] = "Your Payment was committed succesfully"
-      redirect_to loan_path(@loan)
+      redirect_to payments_path(@payment)
     else
       render 'new'
     end

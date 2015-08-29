@@ -10,6 +10,7 @@ class Loan
     self::STATUS
   end
 
+  # Assotiations
   has_many :payments
   belongs_to :user
   

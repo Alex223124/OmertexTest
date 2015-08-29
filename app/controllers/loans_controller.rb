@@ -5,7 +5,6 @@ class LoansController < ApplicationController
 
   
   def index
-    @user = User.find(current_user.id)
     if current_user.admin?
       @loans = Loan.all
       authorize Loan
@@ -33,10 +32,9 @@ class LoansController < ApplicationController
   end
 
   def create
-    @user = User.find(current_user.id)
     @loan = @user.loans.new(secure_params)
-    percente_rate
-    loan_name
+    set_percente_rate
+    set_loan_name
     authorize @loan
     if @loan.save
       flash[:success] = "Your Loan has been created succesfully"
@@ -81,11 +79,15 @@ class LoansController < ApplicationController
     params.require(:loan).permit(:loan_amount, :period, :status)
   end
 
-  # Концепция %-й ставки за год
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+      # Концепция %-й ставки за год
     # Если доход больше 100 и меньше либо равно 1500$ то процентная ставка 30% годовых
     # Если доход больше либо равен 1501 и меньше либо равен 5000 то процентная ставка 20% годовых
     # Есди доход больше либо равен 5001 и меньше либо равен 100 000 000 то процентная ставка 10% годовых    
-  def percente_rate
+  def set_percente_rate
     if @user.client_income.nil?
       # Перенаправление есть вконце метода креейт
     else
@@ -104,12 +106,9 @@ class LoansController < ApplicationController
 
 
   # Кастомный метод который придумывает название для кредита
-  def loan_name
+  def set_loan_name
     @loan.loan_name = "Loan Request registred: " + Time.now.to_s
   end
 
-  def set_user
-    @user = User.find(current_user.id)
-  end
 
 end
