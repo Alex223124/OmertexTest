@@ -1,27 +1,20 @@
 <%= render 'shared/page_title', title: "List of All Loans" %>
 
-
 <% if @loans.any? %>
-<div class="bigbox">
-  <div class="box">
-    <table class="table-minimal">
-      <tbody>
-        <% @loans.each do |loan| %>
-          <tr>
-            <%= render loan %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="bigbox">
+    <div class="box">
+      <table class="table-minimal">
+        <tbody>
+          <% @loans.each do |loan| %>
+            <tr>
+              <%= render loan %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-
-
 <% else %>
-
-
-<p>No loans have been taken.</p>
-
-<%= link_to "Take a Sweet New Loan!", :controller => "loans", :action => "new", :id => @loans %>
-
+  <p>No loans have been taken.</p>
+  <%= link_to "Take a Sweet New Loan!", :controller => "loans", :action => "new", :id => @loans %>
 <% end %> 

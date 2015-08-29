@@ -11,11 +11,9 @@
     <p>Email: <%= @user.email if @user.email %></p>
     <p>Count of Loans: <%= @user.loans.count if @user.loans.count %></p>
     <p>Client income per month: <%= @user.client_income if @user.client_income %></p>
-
       <div class="links">
         <%= link_to 'Edit Account Details', edit_user_path %>
       </div>
-
        <div class="links">
         <%= link_to 'Back', loans_path %>
        </div>

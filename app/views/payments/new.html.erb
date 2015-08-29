@@ -4,9 +4,7 @@
 <div class="row">
 	<div class="well col-md-8 col-md-offset-2">
 		<%= form_for(:payment, :url => { :action => 'create'}) do |f| %>
-
 			<table summary="Payment form field">
-
 				<tr>
 					<th>Payment amount (must be grater than 10)</th>
 					<td><%= f.number_field(:payment_amount) %></td>
@@ -16,11 +14,9 @@
 					<td><%= f.text_field(:description) %></td>
 				<tr>
 			</table>
-
 			<div class="actions">
 		      <%= f.submit "Accept" %>
 		  	</div>
-
 		<% end %>
 	</div>
 </div>

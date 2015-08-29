@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
   before_action :set_user
-
   
   def index
     if current_user.admin?
@@ -66,7 +65,6 @@ class PaymentsController < ApplicationController
     payment.destroy
     redirect_to payments_path, :notice => "Payment deleted."
   end
-
   
   private
 

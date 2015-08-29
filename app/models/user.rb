@@ -13,10 +13,9 @@ class User
     self::ROLE
   end
 
-  
   # Hooks
   before_save { self.email = email.downcase }     
-                                         
+
   # Associations
   has_many :loans 
   has_many :payments
@@ -24,26 +23,16 @@ class User
   # Validations
   VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 105 },
-                                format: { with: VALID_EMAIL_REGEX },
-                                uniqueness: { case_sensitive: false }
- 
-  validates :password, presence:true, length: {minimum: 6}       
-  
-
+  format: { with: VALID_EMAIL_REGEX },
+  uniqueness: { case_sensitive: false }
+  validates :password, presence:true, length: {minimum: 6}
   # Валидация ассоциаций
   validates_associated :loans, :payments
-
-
-
-
   # Data
-  field :user_name,   type: String, default: ""
-  field :first_name,  type: String, default: ""
-  field :last_name,   type: String, default: ""
-
+  field :user_name, type: String, default: ""
+  field :first_name, type: String, default: ""
+  field :last_name, type: String, default: ""
   field :client_income, type: Integer, default: nil
-
-
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
@@ -72,6 +61,4 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
-
-
 end

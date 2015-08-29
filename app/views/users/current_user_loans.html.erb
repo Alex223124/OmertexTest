@@ -1,28 +1,22 @@
 <%= render 'shared/page_title', title: "User's Loans" %>
 <% if @loan.any? %>
-
-<div class="bigbox">
-  <div class="box">
-    <table class="table-minimal">
-      <tbody>
-        <% @loan.each do |loan| %>
-          <tr>
-            <%= render loan %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="bigbox">
+    <div class="box">
+      <table class="table-minimal">
+        <tbody>
+          <% @loan.each do |loan| %>
+            <tr>
+              <%= render loan %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-
 <% else %>
-
-   <div class="row">
+  <div class="row">
   <div class="well col-md-8 col-md-offset-2"> 
-
-<p>Seleted User has 0 Loans.</p>
-
+    <p>Seleted User has 0 Loans.</p>
+    </div>
   </div>
-</div>
-
 <% end %> 

@@ -2,7 +2,6 @@
 
 <div class="row">
   <div class="well col-md-8 col-md-offset-2">
-
 	##################################################################################
 	<p class="loan_name">Name: <%= @loan.loan_name %></p>
 	<p class="loan_amount">Loan amount: <%= @loan.loan_amount %></p>
@@ -11,15 +10,11 @@
 	<p class="loan_period">Time for which the loan is taken <%= @loan.period%> (months).</p>
 	<p class="loan_description">Additional information: <%= @loan.description%>.</p>
 	###################################################################################
-
-
 	<div class="links">
 	  <%= link_to 'Back', loans_path %>
 	</div> 
-
 	<div class="links">
 	  <%= link_to "List of All Loan\'s Payments", :controller => "loans", :action => "current_loan_payments", :id => @loan %>
 	</div> 
-
   </div>
 </div>  
