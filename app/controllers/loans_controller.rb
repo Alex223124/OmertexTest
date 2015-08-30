@@ -73,7 +73,7 @@ class LoansController < ApplicationController
   private
 
   def secure_params
-    params.require(:loan).permit(:loan_amount, :period, :status)
+    params.require(:loan).permit(:loan_amount, :period, :status, :description)
   end
 
   def set_user

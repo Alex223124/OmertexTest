@@ -5,6 +5,7 @@
     <%= link_to loan.loan_name, loan %><br>
     Loan id: <%= loan.id %><br>
     Loan status: <%= loan.status %><br>
+    Additions: <%= loan.description %><br>
 
     <% if @current_user.admin? %>
       <div class="links">
