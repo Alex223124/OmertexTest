@@ -1,0 +1,160 @@
+h1.Test Application For OMERTEX
+
+Rails 4.2 application that provides management, authentication, and authorization for user, loan and payment resources.
+
+h2. What Is Implemented 
+
+Basic fatures for all users:
+* Home page
+* Logo button
+* Advertising carousel
+* Navigation bar
+* Sign up (create account) with only email and password
+* Login
+* "Forgot password?" feature
+* "Remember me" (stay logged in) feature
+* Edit account (edit user profile)
+
+
+Features for Admin (Model User.rb - role: :admin)
+*Two versions of admin panel for management (one created by RailsAdmin)
+*List of All Users
+*List of All User's Payments
+*List of All User's Loans
+*List of All Loans for selected User
+*List of All Payments for selected Loan
+*Management forms and buttons for all recources (User,Loan,Payment)
+*Change status feature for Loan resource(pending, approved, defused)
+*Change role feature for User resource(admin, user)
+
+Features for Clients (model User.rb - role: :user)
+*List of All Loans
+*List of All Loan's Payments
+*an Client can create loans, payment
+*an Client can edit yourself account details
+*an Client can see loans, payments details
+
+More comprehensive list of Users ways (only positive ways):
+
+https://drive.google.com/file/d/0B3TqJca239-qZEdIU3dRWkh6NTg/view?usp=sharing
+
+h4. Database
+
+The application requires a database. The application uses MongoDB with gem mongoid wich uses yourself ORM syntax, see http://docs.mongodb.org/ecosystem/tutorial/ruby-mongoid-tutorial/ .
+
+h4. Front-end Framework
+
+The application (here in the GitHub repository) integrates Bootstrap for a navigation bar and flash messages.
+
+
+h2. Accounts You Will Need (works only here: https://still-eyrie-3303.herokuapp.com/) 
+
+Admin account:
+	email: admin@example.com
+	password: adminpassword
+
+Client 1 account:
+	Username: Client1
+	First name: Jo
+	Last name: Snow
+	email: jo@example.com
+	password: 123123123
+	(You can sign in use only email and password)
+	
+
+Client 2 account
+	Username: Client2
+	First name: Ali
+	Last Name: 
+	email: ali@example.com
+	password: 123123123
+	(You can sign in use only email and password)
+
+h2. Dependencies
+* The Ruby language - version 2.2
+* The Rails gem - version 4.2
+
+
+h2. Getting the Application (clone)
+
+If you want to copy and customize the app you can clone:
+
+<pre>
+$ git clone https://github.com/Alex223124/OmertexTest.git
+</pre>
+
+h4. Testing
+
+The application contain some specs, run :
+
+<pre>
+rspec 
+</pre>
+
+
+
+h3. Roles and statuses (punding gem)
+
+Roles and statues are defined in the *app/models/user.rb; loan.rb;* files.
+
+<pre>
+class Loan
+.
+.
+.
+  enum :status, [:pending, :approved, :refused], default: :pending
+</pre>
+
+<pre>
+class User
+.
+.
+.
+.
+.         
+  enum :role, [:user, :admin], default: :user 
+</pre>
+
+You can change the available roles by changing the array [:pending, :approved, :refused].
+
+
+The application uses the ActiveRecord @enum@ method to manage roles. You must use gem 'mongoid-enum', '~> 0.2.0'.
+
+Custom methods for roles:
+
+<pre>
+class Loan
+  include Mongoid::Document
+  include Mongoid::Enum
+.
+.
+.
+.
+.
+  # Loan.statuses
+  def self.statuses
+    self::STATUS
+  end
+</pre>
+
+
+<pre>
+class User
+  include Mongoid::Document
+  include Mongoid::Enum
+.
+.
+.
+.
+.
+
+  # User.roles 
+  def self.roles
+    self::ROLE
+  end
+</pre>
+
+
+See documentation for "Constants":https://github.com/thetron/mongoid-enum for details.
+
+
