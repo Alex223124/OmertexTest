@@ -1,0 +1,97 @@
+0000000000000000000000000000000000000000 97d4e2d28dfb7d3b6b1bdbdf0cab44bba6ba1c71 Alex223124 <vzadnicy@yandex.ru> 1440121169 +0300	commit (initial): Mongo db works:
+97d4e2d28dfb7d3b6b1bdbdf0cab44bba6ba1c71 20df2ce808ed00110883101892d4bd83a9a383b3 Alex223124 <vzadnicy@yandex.ru> 1440122966 +0300	commit: User index page is set up
+20df2ce808ed00110883101892d4bd83a9a383b3 de9a7b50260db2af88b1a7851329552ce96859d0 Alex223124 <vzadnicy@yandex.ru> 1440123560 +0300	commit: Add aplication controller pundit setup
+de9a7b50260db2af88b1a7851329552ce96859d0 4155e661a2129bef71886ce76a05a23f87815365 Alex223124 <vzadnicy@yandex.ru> 1440126295 +0300	commit: user controller actions added
+4155e661a2129bef71886ce76a05a23f87815365 239ea21304a9e2398bf56415d9c102245a1da205 Alex223124 <vzadnicy@yandex.ru> 1440128772 +0300	commit: Adds update and destroy to users
+239ea21304a9e2398bf56415d9c102245a1da205 7a1547584dd0651f278f721e7c1b96d796746494 Alex223124 <vzadnicy@yandex.ru> 1440133355 +0300	commit: Mongomapper installed
+7a1547584dd0651f278f721e7c1b96d796746494 760741bc0b8bb58de8ffe7ebd9a2795a4f1cd5be Alex223124 <vzadnicy@yandex.ru> 1440167835 +0300	commit: Admin can manage user status
+760741bc0b8bb58de8ffe7ebd9a2795a4f1cd5be 0d5f854a32585b1eb576f2ac1fc41030c61c0d6a Alex223124 <vzadnicy@yandex.ru> 1440179151 +0300	commit: User Data Model validations and Devise UserNewForm Configured
+0d5f854a32585b1eb576f2ac1fc41030c61c0d6a bbf890c1e975544042f7ae5a29fe823872112b24 Alex223124 <vzadnicy@yandex.ru> 1440179653 +0300	commit: loan model and pundit statuses added
+bbf890c1e975544042f7ae5a29fe823872112b24 a6668aa95c2551bf82e252d02eb0cc18ab40bbf6 Alex223124 <vzadnicy@yandex.ru> 1440181128 +0300	commit: Loan policy and loans controller added
+a6668aa95c2551bf82e252d02eb0cc18ab40bbf6 1ead2d3b7b5cab91e69cb5fe458528476c02bc8c Alex223124 <vzadnicy@yandex.ru> 1440187366 +0300	commit: Add views for user and loans
+1ead2d3b7b5cab91e69cb5fe458528476c02bc8c f2a94acf01f6aae9d1183c17e14954a8b3ed92e0 Alex223124 <vzadnicy@yandex.ru> 1440193542 +0300	commit: A lot of comments for features + payment model,controller,policies start templates
+f2a94acf01f6aae9d1183c17e14954a8b3ed92e0 0f0d285042ae6cbd59cce62f22104076f433c605 Alex223124 <vzadnicy@yandex.ru> 1440194504 +0300	commit: User model, associations and validations added
+0f0d285042ae6cbd59cce62f22104076f433c605 b692feb6e0d0c8e0a5cc54833014179d19afa247 Alex223124 <vzadnicy@yandex.ru> 1440331071 +0300	commit: Loan, model, controller and views works
+b692feb6e0d0c8e0a5cc54833014179d19afa247 a5602af3074dc43ca35e1991b24577e4da4efc0e Alex223124 <vzadnicy@yandex.ru> 1440351474 +0300	commit: Resource loan - controller, views and model basic features works
+a5602af3074dc43ca35e1991b24577e4da4efc0e 8be3f84f62d781928671b04b6fb7a536d3118dc2 Alex223124 <vzadnicy@yandex.ru> 1440362207 +0300	commit: Resource payments: model, controller, views and policies, all works
+8be3f84f62d781928671b04b6fb7a536d3118dc2 847dec051c05481f331af1e90c9888b8b254a80a Alex223124 <vzadnicy@yandex.ru> 1440364587 +0300	commit: Add Loan Policy, works
+847dec051c05481f331af1e90c9888b8b254a80a 322ecd3016138461650dbe972fd9709bf1615b87 Alex223124 <vzadnicy@yandex.ru> 1440412097 +0300	commit: Add Payment policy, works
+322ecd3016138461650dbe972fd9709bf1615b87 b8c4ce46ae7f6db61f9aed2597ce43f1e2c062b0 Alex223124 <vzadnicy@yandex.ru> 1440426701 +0300	commit: Add Percente method + Strong parameters devise configuration for New user form, users policy checked
+b8c4ce46ae7f6db61f9aed2597ce43f1e2c062b0 263b832d7a59f90ef01dd3f26dbf7419476042c3 Alex223124 <vzadnicy@yandex.ru> 1440432911 +0300	commit: Add User spec Unit test
+263b832d7a59f90ef01dd3f26dbf7419476042c3 72538552be08aeb567621fa4adcd9f339dd659ae Alex223124 <vzadnicy@yandex.ru> 1440453333 +0300	commit: Added payment specs
+72538552be08aeb567621fa4adcd9f339dd659ae 045ddb67e306d672e1f371dc5b638558f6bf2821 Alex223124 <vzadnicy@yandex.ru> 1440512935 +0300	commit: Added Login and Logout feature in application.html.erb
+045ddb67e306d672e1f371dc5b638558f6bf2821 1d7f81c42b82a5c95a377b937e0f9267be1a9ea8 Alex223124 <vzadnicy@yandex.ru> 1440513155 +0300	commit: Added redirect feature for current_user to loans path
+1d7f81c42b82a5c95a377b937e0f9267be1a9ea8 9050d781755ff5ced5da2db4a4734d600d763ba4 Alex223124 <vzadnicy@yandex.ru> 1440541287 +0300	commit: RailsAdmin installed, custome method Payment name generator added
+9050d781755ff5ced5da2db4a4734d600d763ba4 6139cde017b754359c595e02d65eccd062d60560 Alex223124 <vzadnicy@yandex.ru> 1440547919 +0300	commit: Active Admin components deleted, all works fine
+6139cde017b754359c595e02d65eccd062d60560 b02ca1a69e4df325d5920e1dbc9630e16de84e2d Alex223124 <vzadnicy@yandex.ru> 1440550065 +0300	commit: User id and Loan id for Payments feauter Added
+b02ca1a69e4df325d5920e1dbc9630e16de84e2d bc7e08b1f562c3c9d0685651357a71297ed4874a Alex223124 <vzadnicy@yandex.ru> 1440551991 +0300	commit: User can see only yourself Loans, feature added
+bc7e08b1f562c3c9d0685651357a71297ed4874a 2dea2a3794c27b145f3ce56d3d6b35d67357af9e Alex223124 <vzadnicy@yandex.ru> 1440558449 +0300	commit: User can see only yourself Payments and Loans, debugged
+2dea2a3794c27b145f3ce56d3d6b35d67357af9e e6f1701266a5bf824ede26758a8550cc20fa1a00 Alex223124 <vzadnicy@yandex.ru> 1440590713 +0300	commit: Loans policies features works
+e6f1701266a5bf824ede26758a8550cc20fa1a00 608702ef2c1e9f6025fce210c56f4bffc5a156d6 Alex223124 <vzadnicy@yandex.ru> 1440598822 +0300	commit: User can see all payments as list feature added
+608702ef2c1e9f6025fce210c56f4bffc5a156d6 9127813f90256e0d9ec96ae014038e849a145d17 Alex223124 <vzadnicy@yandex.ru> 1440628868 +0300	commit: User can edit userself profile
+9127813f90256e0d9ec96ae014038e849a145d17 33f9f2adbfe14e91e381faa39db743ee1bf91b80 Alex223124 <vzadnicy@yandex.ru> 1440672876 +0300	commit: Set @user before action added
+33f9f2adbfe14e91e381faa39db743ee1bf91b80 94597ee67794de6fffdfb9688947af8f6c6f6bac Alex223124 <vzadnicy@yandex.ru> 1440694612 +0300	commit: Loans, payments, users controllers - update, destroy features for admin added + some design links
+94597ee67794de6fffdfb9688947af8f6c6f6bac 18826d3f0040255ccb5f56cd6ef8cb9082997cec Alex223124 <vzadnicy@yandex.ru> 1440726180 +0300	commit: Admin can see Loan's Payments as a list
+18826d3f0040255ccb5f56cd6ef8cb9082997cec f850dd19485d5905955247f0e88aae721bcedf91 Alex223124 <vzadnicy@yandex.ru> 1440728886 +0300	commit: Percente per year method debugged
+f850dd19485d5905955247f0e88aae721bcedf91 390865894ebdee0b07775f4ae4eaeca919c6719c Alex223124 <vzadnicy@yandex.ru> 1440729157 +0300	commit: User can see User's loans
+390865894ebdee0b07775f4ae4eaeca919c6719c 2932e91e4ef5e4510a13773b35473b8e03842cf4 Alex223124 <vzadnicy@yandex.ru> 1440738274 +0300	commit: User can see all loan's payments feature added
+2932e91e4ef5e4510a13773b35473b8e03842cf4 6674d528e302f9e1ca1b19603177f570c31df42b Alex223124 <vzadnicy@yandex.ru> 1440740278 +0300	commit: Links and form corrected
+6674d528e302f9e1ca1b19603177f570c31df42b 90e5cd912dcf9346381adfa262e0567bd6e9e7f7 Alex223124 <vzadnicy@yandex.ru> 1440795633 +0300	commit: Styling: forms, tags, header added
+90e5cd912dcf9346381adfa262e0567bd6e9e7f7 6273705d96043fd5467417723decff012725b7e0 Alex223124 <vzadnicy@yandex.ru> 1440795653 +0300	commit: Styling: forms, tags, header added
+6273705d96043fd5467417723decff012725b7e0 738c8a080777bcd028c55d5eee4956b4f36dfc92 Alex223124 <vzadnicy@yandex.ru> 1440806161 +0300	commit: RailsAdmin gem configured, admin panel works, added link from custom admin panel to RailsAdmin Gem's admin panel
+738c8a080777bcd028c55d5eee4956b4f36dfc92 a58fd16c3455677254e15f08c36de8f292dd2f1e Alex223124 <vzadnicy@yandex.ru> 1440808281 +0300	commit: Controllers refactoring done
+a58fd16c3455677254e15f08c36de8f292dd2f1e d1a23210b42993b08f9e98f7b813e4139954e5d6 Alex223124 <vzadnicy@yandex.ru> 1440810659 +0300	commit: Syntax clearing done by hand, rubocop - to much offenses
+d1a23210b42993b08f9e98f7b813e4139954e5d6 819b600d61c5f95cde55a37f333123323641bfe4 Alex223124 <vzadnicy@yandex.ru> 1440812068 +0300	commit: Procfile
+819b600d61c5f95cde55a37f333123323641bfe4 7a1c165a18a543cf81de9d7ef5fbce2b5940604d Alex223124 <vzadnicy@yandex.ru> 1440812588 +0300	commit: Mongoid.yml configured for production
+7a1c165a18a543cf81de9d7ef5fbce2b5940604d 97113d87b86a0a9a687f4a5ca989c9ed0ff02b37 Alex223124 <vzadnicy@yandex.ru> 1440813084 +0300	commit: Ruby version correct
+97113d87b86a0a9a687f4a5ca989c9ed0ff02b37 f9fea1f7d04c0eb4b0118335e17286ccd103c149 Alex223124 <vzadnicy@yandex.ru> 1440813872 +0300	commit: Rails version;Type in Model debugged
+f9fea1f7d04c0eb4b0118335e17286ccd103c149 ad0f120f94fe14087c0a86bba70bf25c56e6e64a Alex223124 <vzadnicy@yandex.ru> 1440817068 +0300	commit: Configuring mongoid + rails_12factor gem added
+ad0f120f94fe14087c0a86bba70bf25c56e6e64a 1c7eca8011c1f738ad0fcaddf0894b3c21078f7a Alex223124 <vzadnicy@yandex.ru> 1440817584 +0300	commit: Heroku Configuration
+1c7eca8011c1f738ad0fcaddf0894b3c21078f7a c03ff4a29f96e7ec5070bf642271abffc2cc6d09 Alex223124 <vzadnicy@yandex.ru> 1440817854 +0300	commit: Heroku Configuration
+c03ff4a29f96e7ec5070bf642271abffc2cc6d09 d230d9a2444f80e74de778267bf29ca7dc7c76e6 Alex223124 <vzadnicy@yandex.ru> 1440818511 +0300	commit: Heroku Configuration
+d230d9a2444f80e74de778267bf29ca7dc7c76e6 547d6a197976a7bc21d55397e0a7b7b26faf3fc1 Alex223124 <vzadnicy@yandex.ru> 1440818659 +0300	commit: Heroku Configuration
+547d6a197976a7bc21d55397e0a7b7b26faf3fc1 c98f0cd9358cffdbcb9471dddb6dca39445efef1 Alex223124 <vzadnicy@yandex.ru> 1440836522 +0300	commit: Confoguring devise
+c98f0cd9358cffdbcb9471dddb6dca39445efef1 18c490300437e1c908ffb19f6e3bb23dad577164 Alex223124 <vzadnicy@yandex.ru> 1440838361 +0300	commit: Mongoid configuration
+18c490300437e1c908ffb19f6e3bb23dad577164 5ab003e1ba54ed2c00a9692896e63946826faa3c Alex223124 <vzadnicy@yandex.ru> 1440852525 +0300	commit: Heroku configuration
+5ab003e1ba54ed2c00a9692896e63946826faa3c 742329573109e63aff0d156dde80060cf3d5d9c2 Alex223124 <vzadnicy@yandex.ru> 1440853970 +0300	commit: Heroku Configurated
+742329573109e63aff0d156dde80060cf3d5d9c2 5fadeb08849236435550d990b272a8d72613c044 Alex223124 <vzadnicy@yandex.ru> 1440855556 +0300	commit: Heroku Configurated
+5fadeb08849236435550d990b272a8d72613c044 2dc8977d9bdfbdd051c5e3f301cbc237d18aaf21 Alex223124 <vzadnicy@yandex.ru> 1440857037 +0300	commit: Herkou Configurated
+2dc8977d9bdfbdd051c5e3f301cbc237d18aaf21 a0a332084624963c17512cdf012b76f485044a52 Alex223124 <vzadnicy@yandex.ru> 1440857758 +0300	commit: Herkou Configurated2
+a0a332084624963c17512cdf012b76f485044a52 43637b4db9891b6a38a9142e697d7a3d8aef7ce2 Alex223124 <vzadnicy@yandex.ru> 1440858555 +0300	commit: Configuring mongoid
+43637b4db9891b6a38a9142e697d7a3d8aef7ce2 6d351889ca8cf305a8eca3598332beebe906e4a7 Alex223124 <vzadnicy@yandex.ru> 1440860473 +0300	commit: Mongoid Configurated
+6d351889ca8cf305a8eca3598332beebe906e4a7 db27fa1a9be3b2c2877f78f2476592949f2f3ac3 Alex223124 <vzadnicy@yandex.ru> 1440860743 +0300	commit: Mongoid Configurated
+db27fa1a9be3b2c2877f78f2476592949f2f3ac3 85544fe7cd7bddd2fe6f9c693fb46871c025794b Alex223124 <vzadnicy@yandex.ru> 1440860948 +0300	commit: Mongoid Configurated
+85544fe7cd7bddd2fe6f9c693fb46871c025794b 931c433b4adc4e0266ecaebd9bacfe909ddba999 Alex223124 <vzadnicy@yandex.ru> 1440861103 +0300	commit: Mongoid Configurated
+931c433b4adc4e0266ecaebd9bacfe909ddba999 d29e90dd3acb915cd68c4dab3587ea251c6ea966 Alex223124 <vzadnicy@yandex.ru> 1440861556 +0300	commit: Mongoid Configurated
+d29e90dd3acb915cd68c4dab3587ea251c6ea966 1bc33580922188b155b8fda011383417ea6ce9a7 Alex223124 <vzadnicy@yandex.ru> 1440863080 +0300	commit: Herkou Configurated
+1bc33580922188b155b8fda011383417ea6ce9a7 1447b41d16c86c329394b4cf1fbfb75c49036da2 Alex223124 <vzadnicy@yandex.ru> 1440863476 +0300	commit: Herkou Configurated
+1447b41d16c86c329394b4cf1fbfb75c49036da2 421a3a28c6c799456649a040963a28d50a849573 Alex223124 <vzadnicy@yandex.ru> 1440863858 +0300	commit: Herkou Configurated
+421a3a28c6c799456649a040963a28d50a849573 509921d51ebb7ea6185719223c02b0fcdb2e7dd6 Alex223124 <vzadnicy@yandex.ru> 1440869477 +0300	commit (amend): Herkou Configurated
+509921d51ebb7ea6185719223c02b0fcdb2e7dd6 509921d51ebb7ea6185719223c02b0fcdb2e7dd6 Alex223124 <vzadnicy@yandex.ru> 1440869607 +0300	rebase -i (start): checkout HEAD~20
+509921d51ebb7ea6185719223c02b0fcdb2e7dd6 509921d51ebb7ea6185719223c02b0fcdb2e7dd6 Alex223124 <vzadnicy@yandex.ru> 1440869607 +0300	rebase -i (finish): returning to refs/heads/master
+509921d51ebb7ea6185719223c02b0fcdb2e7dd6 1c7eca8011c1f738ad0fcaddf0894b3c21078f7a Alex223124 <vzadnicy@yandex.ru> 1440869768 +0300	rebase -i (start): checkout HEAD~30
+1c7eca8011c1f738ad0fcaddf0894b3c21078f7a d4a571ca627707a78be6a8d8a0f5c7ce9f6ed62a Alex223124 <vzadnicy@yandex.ru> 1440869769 +0300	rebase -i (squash): # This is a combination of 2 commits.
+d4a571ca627707a78be6a8d8a0f5c7ce9f6ed62a 2ed6a11e97a9dbc59524f330877e620a568fecf9 Alex223124 <vzadnicy@yandex.ru> 1440869769 +0300	rebase -i (squash): # This is a combination of 3 commits.
+2ed6a11e97a9dbc59524f330877e620a568fecf9 494cf9d8bc231d8a5943238da09d101eff235e05 Alex223124 <vzadnicy@yandex.ru> 1440869769 +0300	rebase -i (squash): # This is a combination of 4 commits.
+494cf9d8bc231d8a5943238da09d101eff235e05 9fcfdaa003a96accd92c6d514c5afdca06330075 Alex223124 <vzadnicy@yandex.ru> 1440869769 +0300	rebase -i (squash): # This is a combination of 5 commits.
+9fcfdaa003a96accd92c6d514c5afdca06330075 40843a87f2c096cabec8454070c2330130b2869d Alex223124 <vzadnicy@yandex.ru> 1440869770 +0300	rebase -i (squash): # This is a combination of 6 commits.
+40843a87f2c096cabec8454070c2330130b2869d 5ef5ea8c5e10b127c079f244ecdbeec5b20c51fa Alex223124 <vzadnicy@yandex.ru> 1440869770 +0300	rebase -i (squash): # This is a combination of 7 commits.
+5ef5ea8c5e10b127c079f244ecdbeec5b20c51fa 5f90c910f2e9d115f8381e0412899122cf5eb015 Alex223124 <vzadnicy@yandex.ru> 1440869770 +0300	rebase -i (squash): # This is a combination of 8 commits.
+5f90c910f2e9d115f8381e0412899122cf5eb015 5036c11e4b210777916d079512a2258921746a04 Alex223124 <vzadnicy@yandex.ru> 1440869770 +0300	rebase -i (squash): # This is a combination of 9 commits.
+5036c11e4b210777916d079512a2258921746a04 211ea26f3b4bbedc605c0ed37ecca322bcccfd25 Alex223124 <vzadnicy@yandex.ru> 1440869770 +0300	rebase -i (squash): # This is a combination of 10 commits.
+211ea26f3b4bbedc605c0ed37ecca322bcccfd25 3f5a981b54c6c5de7af00cb38ac09d6b4bbe2387 Alex223124 <vzadnicy@yandex.ru> 1440869770 +0300	rebase -i (squash): # This is a combination of 11 commits.
+3f5a981b54c6c5de7af00cb38ac09d6b4bbe2387 8db087d34b88c1af857f1701cd4a1bff0af36943 Alex223124 <vzadnicy@yandex.ru> 1440869771 +0300	rebase -i (squash): # This is a combination of 12 commits.
+8db087d34b88c1af857f1701cd4a1bff0af36943 c91f2b16ddd34e1c6835f58184749ae97ea92431 Alex223124 <vzadnicy@yandex.ru> 1440869771 +0300	rebase -i (squash): # This is a combination of 13 commits.
+c91f2b16ddd34e1c6835f58184749ae97ea92431 2dbd6aa68ec2b60db0ecce6c9c30513efcea8bd2 Alex223124 <vzadnicy@yandex.ru> 1440869771 +0300	rebase -i (squash): # This is a combination of 14 commits.
+2dbd6aa68ec2b60db0ecce6c9c30513efcea8bd2 a83c84aa86f5ba23a2c30213669eb8536cb162b7 Alex223124 <vzadnicy@yandex.ru> 1440869771 +0300	rebase -i (squash): # This is a combination of 15 commits.
+a83c84aa86f5ba23a2c30213669eb8536cb162b7 4e31e45a8d96e30e4a0c09612202536abb6b05e4 Alex223124 <vzadnicy@yandex.ru> 1440869771 +0300	rebase -i (squash): # This is a combination of 16 commits.
+4e31e45a8d96e30e4a0c09612202536abb6b05e4 eb0bd97e2050e1496b11a9c917b755f53feaefec Alex223124 <vzadnicy@yandex.ru> 1440869771 +0300	rebase -i (squash): # This is a combination of 17 commits.
+eb0bd97e2050e1496b11a9c917b755f53feaefec f4ef9d7397394d3a437e7b4c2434db432fedb36f Alex223124 <vzadnicy@yandex.ru> 1440869772 +0300	rebase -i (squash): # This is a combination of 18 commits.
+f4ef9d7397394d3a437e7b4c2434db432fedb36f 9c00a5c62e8e18f7678235d1c5ee0c6c4986d1c1 Alex223124 <vzadnicy@yandex.ru> 1440869772 +0300	rebase -i (squash): # This is a combination of 19 commits.
+9c00a5c62e8e18f7678235d1c5ee0c6c4986d1c1 f213db65b2a8385a85611a49f00d2188f7e4c22b Alex223124 <vzadnicy@yandex.ru> 1440869772 +0300	rebase -i (squash): Heroku Configuration
+f213db65b2a8385a85611a49f00d2188f7e4c22b f213db65b2a8385a85611a49f00d2188f7e4c22b Alex223124 <vzadnicy@yandex.ru> 1440869795 +0300	rebase -i (finish): returning to refs/heads/master
+f213db65b2a8385a85611a49f00d2188f7e4c22b 2bf4df5aa9bd5d48fe3bccac820fbfddedde5279 Alex223124 <vzadnicy@yandex.ru> 1440936361 +0300	commit: Show description debugged
+2bf4df5aa9bd5d48fe3bccac820fbfddedde5279 35a4ed852862ca88828d40a371bfafc8cfc9d781 Alex223124 <vzadnicy@yandex.ru> 1440936578 +0300	commit: README added
+35a4ed852862ca88828d40a371bfafc8cfc9d781 e87f800f01f6e566644acb170c7bc2acb0863ea6 Alex223124 <vzadnicy@yandex.ru> 1440936772 +0300	commit: README added
+e87f800f01f6e566644acb170c7bc2acb0863ea6 62fe7f2d52ef9e9dd45aa11f306b49f165c76579 Alex223124 <vzadnicy@yandex.ru> 1440937142 +0300	commit: Payment show debugged
+                                                                                                                                                              

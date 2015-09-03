@@ -7,7 +7,6 @@ class Payment
   validates :payment_amount, numericality: { greater_than: 10,
   less_than_or_equal_to: 500000 }
 
-  # Data
   field :payment_name, type: String
   field :payment_amount, type: Integer
   field :description, type: String 

@@ -6,10 +6,10 @@ class LoansController < ApplicationController
   def index
     if current_user.admin?
       @loans = Loan.all
-      authorize Loan
+      authorize @loan
     else
       @loans = @user.loans  
-      authorize Loan
+      authorize @loans
     end
   end
 
@@ -80,10 +80,7 @@ class LoansController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  # Концепция %-й ставки за год
-    # Если доход больше 100 и меньше либо равно 1500$ то процентная ставка 30% годовых
-    # Если доход больше либо равен 1501 и меньше либо равен 5000 то процентная ставка 20% годовых
-    # Есди доход больше либо равен 5001 и меньше либо равен 100 000 000 то процентная ставка 10% годовых    
+ 
   def set_percente_rate
     if @user.client_income.nil?
       # Перенаправление есть вконце метода креейт
@@ -101,7 +98,6 @@ class LoansController < ApplicationController
     end
   end
 
-  # Кастомный метод который придумывает название для кредита
   def set_loan_name
     @loan.loan_name = "Loan Request registred: " + Time.now.to_s
   end

@@ -1,34 +1,28 @@
 class User
   include Mongoid::Document
   include Mongoid::Enum
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
   enum :role, [:user, :admin], default: :user 
 
-  # User.roles 
   def self.roles
     self::ROLE
   end
 
-  # Hooks
   before_save { self.email = email.downcase }     
 
-  # Associations
   has_many :loans 
   has_many :payments
   
-  # Validations
   VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 105 },
   format: { with: VALID_EMAIL_REGEX },
   uniqueness: { case_sensitive: false }
   validates :password, presence:true, length: {minimum: 6}
-  # Валидация ассоциаций
-  validates_associated :loans, :payments
-  # Data
+
+
   field :user_name, type: String, default: ""
   field :first_name, type: String, default: ""
   field :last_name, type: String, default: ""
